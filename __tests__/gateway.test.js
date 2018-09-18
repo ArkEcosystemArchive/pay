@@ -13,7 +13,7 @@ beforeEach(() => {
   }
 
   for (const peer of fixture('peers').data) {
-    mock.onGet(`http://${peer.ip}:4003/api/v2/transactions`).reply(200, fixture('transactions'))
+    mock.onGet(`http://${peer.ip}:4003/api/v2/wallets/DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9/transactions/received`).reply(200, fixture('transactions'))
   }
 
   mock.onGet('https://min-api.cryptocompare.com/data/histoday').reply(200, fixture('rates'))
