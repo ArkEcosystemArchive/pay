@@ -1,7 +1,5 @@
 # ARK Pay
 
-![ARK Pay](banner.png)
-
 <p align="center">
     <img src="https://github.com/ArkEcosystem/pay/raw/master/banner.png" />
 </p>
