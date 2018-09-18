@@ -1,0 +1,55 @@
+{
+  "private": true,
+  "name": "@arkecosystem/pay",
+  "description": "A JavaScript library to use the ARK Blockchain for payments.",
+  "version": "0.1.0",
+  "contributors": [
+    "Brian Faust <brian@ark.io>"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "browser": "dist/index.umd.js",
+  "module": "dist/index.cjs.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "build": "rimraf dist && cross-env NODE_ENV=production webpack --config build/webpack.config.js",
+    "test": "cross-env ARK_ENV=test jest --runInBand --detectOpenHandles",
+    "test:coverage": "cross-env ARK_ENV=test jest --coverage --runInBand --detectOpenHandles",
+    "test:debug": "cross-env ARK_ENV=test node --inspect-brk ../../node_modules/.bin/jest --runInBand --watch",
+    "test:watch": "cross-env ARK_ENV=test jest --runInBand --watch",
+    "test:watch:all": "cross-env ARK_ENV=test jest --runInBand --watchAll",
+    "lint": "eslint --ignore-pattern dist ./ --fix",
+    "depcheck": "depcheck ./ --ignores jest-extended,regenerator-runtime,rimraf,standard,webpack",
+    "prepublish": "yarn run lint && yarn run test && yarn run build"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "emittery": "^0.4.1",
+    "interval-promise": "^1.2.0",
+    "lodash.get": "^4.4.2",
+    "lodash.sample": "^4.2.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^1.15.0",
+    "codecov": "^3.1.0",
+    "cross-env": "^5.2.0",
+    "depcheck": "^0.6.11",
+    "eslint": "^5.6.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^23.6.0",
+    "jest-extended": "^0.8.1",
+    "regenerator-runtime": "^0.12.1",
+    "rimraf": "^2.6.2",
+    "standard": "^12.0.1",
+    "webpack": "^4.19.0",
+    "webpack-merge": "^4.1.4"
+  }
+}

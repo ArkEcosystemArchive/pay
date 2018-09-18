@@ -1,0 +1,29 @@
+{
+    "Response": "Success",
+    "Type": 100,
+    "Aggregated": false,
+    "Data": [{
+        "time": 1537142400,
+        "high": 1.54,
+        "low": 1.46,
+        "open": 1.47,
+        "volumefrom": 41093.76,
+        "volumeto": 62738.57,
+        "close": 1.53
+    }, {
+        "time": 1537228800,
+        "high": 1.54,
+        "low": 1.53,
+        "open": 1.54,
+        "volumefrom": 3084.92,
+        "volumeto": 4740.92,
+        "close": 1.53
+    }],
+    "TimeTo": 1537228800,
+    "TimeFrom": 1537142400,
+    "FirstValueInArray": true,
+    "ConversionType": {
+        "type": "invert_multiply",
+        "conversionSymbol": "BTC"
+    }
+}

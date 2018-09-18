@@ -1,0 +1,19 @@
+dist: trusty
+
+language: node_js
+
+node_js:
+  - 10
+  - 9
+
+install: yarn
+
+script:
+  - yarn test --ci --coverage
+  - codecov
+
+cache:
+  yarn: true
+
+git:
+  depth: 1
