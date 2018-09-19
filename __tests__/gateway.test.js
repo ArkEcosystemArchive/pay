@@ -185,6 +185,14 @@ describe('ArkPay', () => {
 
       expect(gateway.data.network.peers).toEqual(['dummy'])
     })
+
+    it('should abort if too many attempts failed', async () => {
+      expect(gateway.data.network.peers).toBeEmpty()
+
+      await gateway.__fetchSeeds(5)
+
+      expect(gateway.data.network.peers).toBeEmpty()
+    })
   })
 
   describe('__fetchPeers', () => {
@@ -207,6 +215,13 @@ describe('ArkPay', () => {
 
       expect(gateway.data.network.peers).toBeEmpty()
     })
+
+    it('should abort if too many attempts failed', async () => {
+      await gateway.__fetchSeeds()
+      await gateway.__fetchPeers(5)
+
+      expect(gateway.data.network.peers).toBeEmpty()
+    })
   })
 
   describe('__fetchRates', () => {
@@ -219,6 +234,16 @@ describe('ArkPay', () => {
 
       expect(gateway.data.transfer.exchangeRate).not.toBeEmpty()
       expect(gateway.data.transfer.amounts.crypto).not.toBeEmpty()
+    })
+
+    it('should abort if too many attempts failed', async () => {
+      expect(gateway.data.transfer.exchangeRate).toBeUndefined()
+      expect(gateway.data.transfer.amounts.crypto).toBeUndefined()
+
+      await gateway.__fetchRates(5)
+
+      expect(gateway.data.transfer.exchangeRate).toBeUndefined()
+      expect(gateway.data.transfer.amounts.crypto).toBeUndefined()
     })
   })
 
