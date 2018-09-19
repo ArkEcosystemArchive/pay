@@ -29,8 +29,6 @@
     "axios": "^0.18.0",
     "emittery": "^0.4.1",
     "interval-promise": "^1.2.0",
-    "lodash.get": "^4.4.2",
-    "lodash.sample": "^4.2.1",
     "uuid": "^3.3.2"
   },
   "devDependencies": {

@@ -251,4 +251,16 @@ describe('ArkPay', () => {
       expect(transaction).toBeFalse()
     })
   })
+
+  describe('__getRandomPeer', () => {
+    it('should be a function', () => {
+      expect(gateway.__getRandomPeer).toBeFunction()
+    })
+
+    it('should get a random peer', async () => {
+      await gateway.__fetchSeeds()
+
+      expect(gateway.__getRandomPeer()).toBeString()
+    })
+  })
 })
