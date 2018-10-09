@@ -253,7 +253,7 @@ describe('ArkPay', () => {
     })
 
     it('should fetch the transaction and match', async () => {
-      gateway.data.network.peers = fixture('peers').data.map(peer => peer.ip)
+      gateway.data.network.peers = fixture('peers').data.map(peer => ({ ip: peer.ip, port: 4003 }))
 
       gateway
           .recipient('DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9')
@@ -285,7 +285,11 @@ describe('ArkPay', () => {
     it('should get a random peer', async () => {
       await gateway.__fetchSeeds()
 
-      expect(gateway.__getRandomPeer()).toBeString()
+      const peer = gateway.__getRandomPeer()
+
+      expect(peer).toBeObject()
+      expect(peer.ip).toBeString()
+      expect(peer.port).toBeNumber()
     })
   })
 })
