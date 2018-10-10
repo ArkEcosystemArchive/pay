@@ -24,7 +24,12 @@ If you want to use the CDN version:
 
 ## Documentation
 
-You can find installation instructions and detailed instructions on how to use this package at the [dedicated documentation site](https://docs.ark.io/api/sdk/pay.html).
+You can find installation instructions and detailed instructions on how to use this package at the [dedicated documentation site](https://docs.ark.io/cookbook/pay/installation.html).
+
+## Examples
+
+- React - https://github.com/ArkEcosystem/pay-demo-react
+- Vue.js - https://github.com/ArkEcosystem/pay-demo-vue
 
 ## Security
 
