@@ -141,9 +141,9 @@ describe('ArkPay', () => {
     })
   })
 
-  describe('prepare', () => {
+  describe('start', () => {
     it('should be a function', () => {
-      expect(gateway.prepare).toBeFunction()
+      expect(gateway.start).toBeFunction()
     })
 
     it('should call all methods', async () => {
@@ -151,7 +151,7 @@ describe('ArkPay', () => {
       gateway.__fetchPeers = jest.fn()
       gateway.__fetchRates = jest.fn()
 
-      await gateway.prepare()
+      await gateway.start()
 
       expect(gateway.__fetchSeeds).toHaveBeenCalledTimes(1)
       expect(gateway.__fetchPeers).toHaveBeenCalledTimes(1)
@@ -159,9 +159,9 @@ describe('ArkPay', () => {
     })
   })
 
-  describe('start', () => {
+  describe('__mountListener', () => {
     it('should be a function', () => {
-      expect(gateway.start).toBeFunction()
+      expect(gateway.__mountListener).toBeFunction()
     })
   })
 
