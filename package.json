@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@arkecosystem/pay",
-  "description": "A JavaScript library to use the ARK Blockchain for payments.",
+  "description": "A JavaScript library to use the Ark Blockchain for payments.",
   "version": "0.1.0",
   "contributors": [
     "Brian Faust <brian@ark.io>"
@@ -16,11 +16,11 @@
   ],
   "scripts": {
     "build": "rimraf dist && cross-env NODE_ENV=production webpack --config build/webpack.config.js",
-    "test": "cross-env ARK_ENV=test jest --runInBand --forceExit",
-    "test:coverage": "cross-env ARK_ENV=test jest --coverage --runInBand --forceExit",
-    "test:debug": "cross-env ARK_ENV=test node --inspect-brk ../../node_modules/.bin/jest --runInBand --watch",
-    "test:watch": "cross-env ARK_ENV=test jest --runInBand --watch",
-    "test:watch:all": "cross-env ARK_ENV=test jest --runInBand --watchAll",
+    "test": "cross-env jest --runInBand --forceExit",
+    "test:coverage": "cross-env jest --coverage --runInBand --forceExit",
+    "test:debug": "cross-env node --inspect-brk ../../node_modules/.bin/jest --runInBand --watch",
+    "test:watch": "cross-env jest --runInBand --watch",
+    "test:watch:all": "cross-env jest --runInBand --watchAll",
     "lint": "eslint --ignore-pattern dist ./ --fix",
     "depcheck": "depcheck ./ --ignores @babel/core,@babel/preset-env,babel-loader,jest-extended,regenerator-runtime,rimraf,standard,webpack,webpack-cli",
     "prepublish": "yarn run lint && yarn run test && yarn run build"

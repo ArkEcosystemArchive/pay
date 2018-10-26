@@ -1,4 +1,4 @@
-# ARK Pay
+# Ark Pay
 
 <p align="center">
     <img src="https://github.com/ArkEcosystem/pay/raw/master/banner.png" />
