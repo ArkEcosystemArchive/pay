@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "bignumber.js": "^8.0.1",
     "emittery": "^0.4.1",
     "interval-promise": "^1.2.0",
     "uuid": "^3.3.2"
