@@ -4,11 +4,11 @@
     <img src="https://github.com/ArkEcosystem/pay/raw/master/banner.png" />
 </p>
 
-<a href="https://travis-ci.org/ArkEcosystem/pay"><img src="https://badgen.net/travis/ArkEcosystem/pay"></a>
-<a href="https://codecov.io/github/ArkEcosystem/pay"><img src="https://badgen.net/codecov/c/github/ArkEcosystem/pay"></a>
-<a href="https://github.com/ArkEcosystem/pay"><img src="https://badgen.net/github/last-commit/ArkEcosystem/pay"></a>
-<a href="https://github.com/ArkEcosystem/pay"><img src="https://badgen.net/github/release/ArkEcosystem/pay"></a>
-<a href="https://github.com/ArkEcosystem/pay"><img src="https://badgen.net/github/license/ArkEcosystem/pay"></a>
+[![Build Status](https://badgen.now.sh/circleci/github/ArkEcosystem/pay)](https://circleci.com/gh/ArkEcosystem/pay)
+[![Codecov](https://badgen.now.sh/codecov/c/github/arkecosystem/pay)](https://codecov.io/gh/arkecosystem/pay)
+[![Last Commit](https://badgen.net/github/last-commit/ArkEcosystem/pay)](https://github.com/ArkEcosystem/pay/commits)
+[![Latest Version](https://badgen.now.sh/github/release/ArkEcosystem/pay)](https://github.com/ArkEcosystem/pay/releases)
+[![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
 
 ## Installation
 
