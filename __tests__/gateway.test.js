@@ -4,16 +4,20 @@ const ArkPay = require('../lib')
 
 const fixture = file => require(`./fixtures/${file}.json`)
 
+const dummyPeers = [{ ip: 'dexplorer.ark.io', port: 4003, protocol: 'https' }]
+
 let gateway
 beforeEach(() => {
   const mock = new MockAdapter(axios)
 
   for (const peer of fixture('seeds')) {
     mock.onGet(`http://${peer.ip}:4003/api/v2/peers`).reply(200, fixture('peers'))
+    mock.onGet(`https://${peer.ip}:4003/api/v2/peers`).reply(200, fixture('peers'))
   }
 
   for (const peer of fixture('peers').data) {
     mock.onGet(`http://${peer.ip}:4003/api/v2/wallets/DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9/transactions/received`).reply(200, fixture('transactions'))
+    mock.onGet(`https://${peer.ip}:4003/api/v2/wallets/DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9/transactions/received`).reply(200, fixture('transactions'))
   }
 
   mock.onGet('https://min-api.cryptocompare.com/data/histoday').reply(200, fixture('rates'))
@@ -113,9 +117,9 @@ describe('ArkPay', () => {
     })
 
     it('should set the seeds', () => {
-      gateway.seeds('ark', [{ ip: 'dummy', port: 'dummy' }])
+      gateway.seeds('ark', dummyPeers)
 
-      expect(gateway.data.seeds).toEqual({ ark: ['dummy'] })
+      expect(gateway.data.seeds).toEqual({ ark: ['dexplorer.ark.io'] })
     })
   })
 
@@ -125,9 +129,9 @@ describe('ArkPay', () => {
     })
 
     it('should set the peers', () => {
-      gateway.peers([{ ip: 'dummy', port: 'dummy' }])
+      gateway.peers(dummyPeers)
 
-      expect(gateway.data.network.peers).toEqual(['dummy'])
+      expect(gateway.data.network.peers).toEqual(dummyPeers)
     })
   })
 
@@ -253,7 +257,7 @@ describe('ArkPay', () => {
     })
 
     it('should fetch the transaction and match', async () => {
-      gateway.data.network.peers = fixture('peers').data.map(peer => ({ ip: peer.ip, port: 4003 }))
+      gateway.data.network.peers = fixture('peers').data.map(gateway.__mapPeer)
 
       gateway
           .recipient('DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9')
