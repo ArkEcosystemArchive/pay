@@ -1,7 +1,7 @@
 {
   "name": "@arkecosystem/pay",
   "description": "A JavaScript library to use the Ark Blockchain for payments.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "contributors": [
     "Brian Faust <brian@ark.io>"
   ],
