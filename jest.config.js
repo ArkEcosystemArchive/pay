@@ -10,6 +10,7 @@ module.exports = {
     'json'
   ],
   coverageDirectory: '<rootDir>/.coverage',
+  collectCoverage: true,
   collectCoverageFrom: [
     'lib/**/*.js',
     '!**/node_modules/**'

@@ -16,3 +16,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn test
+      - run:
+          name: Codecov
+          when: on_success
+          command: bash <(curl -s https://codecov.io/bash)
