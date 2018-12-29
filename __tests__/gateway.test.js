@@ -249,6 +249,15 @@ describe('ArkPay', () => {
       expect(gateway.data.transfer.exchangeRate).toBeUndefined()
       expect(gateway.data.transfer.amounts.crypto).toBeUndefined()
     })
+
+    it('should set the correct crypto amount', async () => {
+      const fiatAmount = 3
+
+      gateway.amount(fiatAmount)
+      await gateway.__fetchRates()
+
+      expect(gateway.data.transfer.amounts.crypto).toEqual(fiatAmount * fixture('rates').Data[0].low)
+    })
   })
 
   describe('__fetchTransfer', () => {
