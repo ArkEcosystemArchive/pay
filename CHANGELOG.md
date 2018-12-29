@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+## 0.1.12 - 2018-12-21
+
+### Fixed
+- Calculate the correct crypto amount
+
+## 0.1.11 - 2018-12-21
+
+### Changed
+- Do not fetch peers if they were manually set
+
 ## 0.1.0 - 2018-12-21
 
 - initial release
