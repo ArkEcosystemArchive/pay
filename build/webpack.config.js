@@ -15,7 +15,7 @@ const browserConfig = {
   target: 'web',
   babel: {
     modules: 'umd',
-    useBuiltIns: 'usage',
+    // useBuiltIns: 'usage',
     targets: {
       browsers: 'defaults'
     }
