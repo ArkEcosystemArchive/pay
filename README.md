@@ -10,6 +10,8 @@
 [![Latest Version](https://badgen.now.sh/github/release/ArkEcosystem/pay)](https://github.com/ArkEcosystem/pay/releases)
 [![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
 
+> Lead Maintainer: [Brian Faust](https://github.com/faustbrian)
+
 > Note: The ARK Pay front-end and demos were created to demonstrate a simple and practical method of implementing a payment solution to a website. ARK Pay is currently in Alpha without a back-end solution to verify payments. A back-end solution is currently on the Tier-0 roadmap and will be developed within 2019.
 
 ## Installation
@@ -39,9 +41,8 @@ If you discover a security vulnerability within this package, please send an e-m
 
 ## Credits
 
-- [Brian Faust](https://github.com/faustbrian)
-- [All Contributors](../../../../contributors)
+This project exists thanks to all the people who [contribute](../../contributors).
 
 ## License
 
-[MIT](LICENSE) © [ArkEcosystem](https://ark.io)
+[MIT](LICENSE) © [ARK Ecosystem](https://ark.io)
